@@ -1,9 +1,13 @@
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
-  fxLayoutGap="10px" fxLayoutGap.xs="0">
+<div class="container"
+      fxLayout="row"
+      fxLayout.sm="column" 
+      fxLayout.xs="column" 
+      fxLayoutAlign.gt-md="space-around center"
+      fxLayoutGap="40px" 
+      fxLayoutGap.xs="0">
 
   <div fxFlex="40">
-    <div fxFlex *ngIf="dish">
-      <md-card>
+      <md-card *ngIf="dish">
         <md-card-header>
           <md-card-title>
             <h3>{{dish.name | uppercase}}</h3>
@@ -19,11 +23,11 @@
         </md-card-actions>
       </md-card>
     </div>
-
-    <md-list fxFlex="40">
+  </div>
+    <div fxFlex="40">
+      <md-list *ngIf="dish">
       <h3>Comments</h3>
             <md-list-item *ngFor="let com of dish.comments">
-                <!-- <img md-list-avatar src="{{dish.image}}" alt="{{dish.name}}"> -->
                 <h1 md-line> {{com.comment}} </h1>
                 <p md-line>
                   <span>  {{com.rating}} stars </span>
@@ -33,5 +37,5 @@
                   </p>
               </md-list-item>
             </md-list>
-      </div>
     </div>
+    
